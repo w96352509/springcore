@@ -15,6 +15,29 @@
 
        <bean id="helloTime" class="com.study.springcore.case01.HelloTime"></bean>
        
-       <bean id="cpu" scope="prototype" class="com.study.springcore.case01.CPU"></bean>
+       <bean id="cpu1"  class="com.study.springcore.case01.CPU"></bean>
+       <bean id="cpu2"  class="com.study.springcore.case01.CPU"></bean>
+       <bean id="cpu3"  class="com.study.springcore.case01.CPU">
+           <property name="ghz" value="1.2"></property>
+       </bean>
+       <bean id="cpu4"  class="com.study.springcore.case01.CPU">
+           <constructor-arg value="0.8" index="0"></constructor-arg>
+       </bean>
+       
+       <bean id="cpu5"  class="com.study.springcore.case01.CPU" p:ghz="1.1">
+       </bean>
 
+       <bean id="cpu6"  class="com.study.springcore.case01.CPU" c:ghz="0.7">
+       </bean>
+       
+       <bean id="ram1"  class="com.study.springcore.case01.RAM" p:gb="4"/>
+       <bean id="ram2"  class="com.study.springcore.case01.RAM" p:gb="8"/>
+       <bean id="ram3"  class="com.study.springcore.case01.RAM" p:gb="16"/>
+       <bean id="ram4"  class="com.study.springcore.case01.RAM" p:gb="32"/>
+       
+       <bean id="hd1" class="com.study.springcore.case01.HD" p:HD="250"/>
+       <bean id="hd2" class="com.study.springcore.case01.HD" p:HD="500"/>
+       <bean id="hd3" class="com.study.springcore.case01.HD" p:HD="100"/>
+       
+       <bean id="computer" class="com.study.springcore.case01.Computer"/>
 </beans>
