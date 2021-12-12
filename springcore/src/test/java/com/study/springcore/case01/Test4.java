@@ -1,6 +1,7 @@
 package com.study.springcore.case01;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -41,9 +42,15 @@ public class Test4 {
 		
 		//電腦陣列
 		Computer[] computers = {computer , acer , ibm};
-		//求總價
+		//求總價7
+		double total2 = 0;
+		for(Computer c : computers) {
+			total2 = total2 + c.getPrice();
+		}
+		//求總價8
 		Double total=Arrays.stream(computers).mapToDouble(c -> c.getPrice()).sum();
 		System.out.println(total);
+		System.out.println(total2);
 	}
 	
 }
