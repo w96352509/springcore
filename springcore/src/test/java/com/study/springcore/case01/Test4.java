@@ -28,6 +28,14 @@ public class Test4 {
 		computer.setHd(hd3);
 		computer.setRam(ram4);
 		System.out.println(computer);
+		//品牌電腦
+		Computer acer = ctx.getBean("acer",Computer.class);
+		System.out.println(acer.toString());
+		System.out.println(acer.getPrice());
+		//品牌電腦
+		Computer ibm = ctx.getBean("ibm",Computer.class);
+		System.out.println(ibm.toString());
+		System.out.println(ibm.getPrice());
 	}
 	
 }

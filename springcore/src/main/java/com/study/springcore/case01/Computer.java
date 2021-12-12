@@ -5,6 +5,10 @@ public class Computer {
 	private RAM ram;
 	private HD hd;
 
+	public Double getPrice() {
+    	return cpu.getGhz()*8000 + ram.getGb() * 150 + hd.getHD() *20;
+    }
+	
 	public Computer() {
 
 	}
@@ -42,7 +46,9 @@ public class Computer {
 
 	@Override
 	public String toString() {
-		return "Computer [cpu=" + cpu + ", ram=" + ram + ", hd=" + hd + "]";
+		return "Computer [cpu=" + cpu + ", ram=" + ram + ", hd=" + hd + ", $" + getPrice() + "]";
 	}
+
+	
 
 }

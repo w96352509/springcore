@@ -2,7 +2,9 @@ package com.study.springcore.case01;
 
 public class CPU {
     private Double ghz;
-
+    
+    
+    
     public CPU() {
 		System.out.println("建構CPU");
 	}

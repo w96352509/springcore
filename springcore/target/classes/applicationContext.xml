@@ -40,4 +40,15 @@
        <bean id="hd3" class="com.study.springcore.case01.HD" p:HD="100"/>
        
        <bean id="computer" class="com.study.springcore.case01.Computer"/>
+       
+       <bean id="acer" class="com.study.springcore.case01.Computer" >
+         <property name="cpu" ref="cpu5"></property>
+         <property name="ram" ref="ram2"></property>
+         <property name="hd" ref="hd2"></property>
+       </bean>
+       
+       <bean id="ibm" class="com.study.springcore.case01.Computer" 
+        c:cpu-ref="cpu5"  c:hd-ref="hd2"  c:ram-ref="ram3" >
+       </bean>
+       
 </beans>
