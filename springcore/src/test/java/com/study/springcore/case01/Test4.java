@@ -22,6 +22,7 @@ public class Test4 {
 		HD hd2 = ctx.getBean("hd2" , HD.class);
 		HD hd3 = ctx.getBean("hd3" , HD.class);
 		
+		//組成
 		Computer computer = ctx.getBean("computer",Computer.class);
 		computer.setCpu(cpu6);
 		computer.setHd(hd3);
