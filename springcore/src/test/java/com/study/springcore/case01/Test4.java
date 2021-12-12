@@ -1,5 +1,7 @@
 package com.study.springcore.case01;
 
+import java.util.Arrays;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -31,11 +33,17 @@ public class Test4 {
 		//品牌電腦
 		Computer acer = ctx.getBean("acer",Computer.class);
 		System.out.println(acer.toString());
-		System.out.println(acer.getPrice());
+		
 		//品牌電腦
 		Computer ibm = ctx.getBean("ibm",Computer.class);
 		System.out.println(ibm.toString());
-		System.out.println(ibm.getPrice());
+		
+		
+		//電腦陣列
+		Computer[] computers = {computer , acer , ibm};
+		//求總價
+		Double total=Arrays.stream(computers).mapToDouble(c -> c.getPrice()).sum();
+		System.out.println(total);
 	}
 	
 }
