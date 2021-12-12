@@ -12,6 +12,7 @@ public class Test3 {
 		CPU cpu2 = ctx.getBean(CPU.class);
 		cpu.setGhz(2.8);
 		cpu2.setGhz(3.8);
+		
 		System.out.println(cpu.toString());
 		System.out.println(cpu2.toString());
 	}
