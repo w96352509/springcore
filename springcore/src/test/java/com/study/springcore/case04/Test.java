@@ -11,7 +11,7 @@ public class Test {
 		Currency jpy = ctx.getBean("jpy" , JPY.class);
 		System.out.println(usd.getValue());
 		System.out.println(jpy.getValue());
-		
+		((ClassPathXmlApplicationContext)ctx).close();
 	}
 	
 }

@@ -12,6 +12,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
-   <bean id="usd" class="com.study.springcore.case04.USD" p:value="100"></bean>
+   <bean id="usd" class="com.study.springcore.case04.USD" p:value="100"
+         init-method="init"  destroy-method="destory"    />
+   
    <bean id="jpy" class="com.study.springcore.case04.JPY" p:value="300"></bean>
 </beans>
