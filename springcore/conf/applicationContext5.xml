@@ -23,6 +23,7 @@
    
    <bean id="general" class="com.study.springcore.case05.Clazz" 
          p:id="104" p:name="通識" p:credit="1"/> 
+   
    <bean id="s1" class="com.study.springcore.case05.Student"
          p:id="201" p:name="John">
          <property name="clazzs">
@@ -30,21 +31,23 @@
               <ref bean="java" />
               <ref bean="sql" />
               <ref bean="general" />
+              <ref bean="html" />
            </set>
          </property>
    </bean>
+   
    <bean id="s2" class="com.study.springcore.case05.Student"
          p:id="202" p:name="Mary">
          <property name="clazzs">
            <set>
-              <ref bean="java" />
-              <ref bean="sql" />
+              <ref bean="html" />
+              
            </set>
          </property>
    </bean>
    
    <bean id="t1" class="com.study.springcore.case05.Teacher" 
-         p:id="301" p:name="Teacher1">
+         p:id="301" p:name="Teacher1(java/sql/gen)">
         <property name="clazzs">
           <set>
               <ref bean="java"/>
@@ -67,6 +70,32 @@
              </entry>
              <entry key="addition">
                          <value>20000</value>
+             </entry>
+         </map>
+        </property>
+   </bean>
+   
+   <bean id="t2" class="com.study.springcore.case05.Teacher" 
+         p:id="302" p:name="Teacher2(html)">
+        <property name="clazzs">
+          <set>
+              <ref bean="html"/>
+              
+          </set>
+        </property>
+        <property name="experties">
+         <list>
+              <value>Web</value>
+              <value>Draw</value>
+         </list>
+        </property>
+        <property name="salary">
+         <map>
+             <entry key="base">
+                         <value>40000</value>
+             </entry>
+             <entry key="addition">
+                         <value>5000</value>
              </entry>
          </map>
         </property>
