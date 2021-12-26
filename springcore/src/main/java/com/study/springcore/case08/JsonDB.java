@@ -43,4 +43,15 @@ public class JsonDB {                  //Json資料庫
 		}
 		return people;
 	}
+	public boolean add(Person person) throws Exception{
+		List<Person> people = queryAll();
+		//驗證存在是否相同
+		if (person.equals(people)) {
+			return false;
+		}
+		people.add(person);
+		String newjsonString = gson.toJson(people);
+		return true;
+	}
+	
 }
