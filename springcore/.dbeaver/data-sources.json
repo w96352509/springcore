@@ -1,0 +1,128 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-17e3deb4aa2-3c552819aa8484b6": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "sys",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "sys",
+				"url": "jdbc:mysql://localhost:3306/sys",
+				"home": "C:\\Program Files\\MySQL\\MySQL Server 8.0",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		},
+		"mysql8-17e3dec5b71-6009f83eab198747": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "sys 2",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "sys",
+				"url": "jdbc:mysql://localhost:3306/sys",
+				"home": "C:\\Program Files\\MySQL\\MySQL Server 8.0",
+				"type": "dev",
+				"properties": {
+					"connectTimeout": "20000",
+					"rewriteBatchedStatements": "true",
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2"
+				},
+				"auth-model": "native",
+				"handlers": {}
+			}
+		},
+		"mysql8-17e3dece992-22d03e289928dcaa": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "sys 3",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "sys",
+				"url": "jdbc:mysql://localhost:3306/sys",
+				"home": "C:\\Program Files\\MySQL\\MySQL Server 8.0",
+				"type": "dev",
+				"properties": {
+					"connectTimeout": "20000",
+					"rewriteBatchedStatements": "true",
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2"
+				},
+				"auth-model": "native",
+				"handlers": {}
+			}
+		},
+		"mysql8-17e3df238fc-4ba002c55f58f960": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "sys 4",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "sys",
+				"url": "jdbc:mysql://localhost:3306/sys",
+				"home": "C:\\Program Files\\MySQL\\MySQL Server 8.0",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		},
+		"mysql8-17e3df2fe14-6bc971017b0cc009": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "finweb",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "finweb",
+				"url": "jdbc:mysql://localhost:3306/finweb",
+				"home": "C:\\Program Files\\MySQL\\MySQL Server 8.0",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		},
+		"mysql8-17e3df40ef3-6d69245f9ef57758": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "sys 5",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "sys",
+				"url": "jdbc:mysql://localhost:3306/sys",
+				"home": "C:\\Program Files\\MySQL\\MySQL Server 8.0",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
