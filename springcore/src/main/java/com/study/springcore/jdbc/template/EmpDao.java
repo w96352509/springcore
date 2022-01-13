@@ -15,7 +15,7 @@ public class EmpDao {
 
 	// 多筆查詢
 	public List<Map<String, Object>> queryAll() {
-		String sql = "select eid , name , age , createtime from emp";
+		String sql = "select eid , ename , age , createtime from emp";
 		List<Map<String, Object>> emps = jdbcTemplate.queryForList(sql);
 		return emps;
 	}

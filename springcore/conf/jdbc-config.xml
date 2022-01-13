@@ -14,7 +14,9 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 	
 	<context:component-scan base-package="com.study.springcore.jdbc" />
-		
+	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
 	<!-- load db.properties -->
 	<context:property-placeholder location="db.properties" />
 	

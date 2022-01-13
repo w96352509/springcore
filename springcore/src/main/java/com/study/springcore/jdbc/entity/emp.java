@@ -5,21 +5,20 @@ import java.util.Date;
 public class emp {
 
 	private Integer eid ;
-	private String name;
+	private String ename;
 	private Integer age;
 	private Date createtime;
-	
 	public Integer getEid() {
 		return eid;
 	}
 	public void setEid(Integer eid) {
 		this.eid = eid;
 	}
-	public String getName() {
-		return name;
+	public String getEname() {
+		return ename;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setEname(String ename) {
+		this.ename = ename;
 	}
 	public Integer getAge() {
 		return age;
@@ -35,6 +34,8 @@ public class emp {
 	}
 	@Override
 	public String toString() {
-		return "emp [eid=" + eid + ", name=" + name + ", age=" + age + ", createtime=" + createtime + "]";
+		return "emp [eid=" + eid + ", ename=" + ename + ", age=" + age + ", createtime=" + createtime + "]";
 	}
+	
+	
 }
