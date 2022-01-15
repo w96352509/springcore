@@ -16,9 +16,10 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class AOPTemplate {
-
+    //存檔目錄路徑
 	private String pathname = "C:/Users/vic/git/repository10/springcore/src/main/java/com/study/springcore/jdbc/logintime";
 	
+	//切入方法
 	@Pointcut(value = "execution(* com.study.springcore.jdbc.template.EmpDao.queryAll(..))")
 	public void pt() {
 	}
@@ -47,11 +48,15 @@ public class AOPTemplate {
 	public void create(Path userhome , String name , Date date) throws IOException {
 		// 創建目錄
 		Files.createDirectories(userhome);
+		//時間格式
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss") ;
 		String datetime = dateFormat.format(date);
+		//創建檔案並設定名稱
 		Path profile = userhome.resolve(name+dateFormat.format(date) + ".txt"); 
 		System.out.println(name+datetime+".txt");
+		//寫入 profile 所創的檔案中
 		try (BufferedWriter writer = Files.newBufferedWriter(profile)) {
+			//內容
 			writer.write(String.format("%s , %s", name , date)); //
 		}
 	}
