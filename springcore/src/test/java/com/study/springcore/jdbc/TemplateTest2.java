@@ -9,24 +9,20 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.study.springcore.jdbc.template.EmpDao;
 
-public class TemplateTest1 {
+public class TemplateTest2 {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("jdbc-config.xml");
 		EmpDao empDao = ctx.getBean("empDao" , EmpDao.class);
+		int rowcount = 0;
 		
-		List<Map<String, Object>> emps = empDao.queryAll();
-		//如何取得 eid=2的員工姓名
-		//物件要改成字串比對
-		String name=emps.stream().filter(e ->(e.get("eid")+"").equals("1"))
-				.findFirst()
-				.get()  //取得Map
-				.get("ename")+""; ////取得Map中的資料
-		System.out.println(name);
+		// 測試單筆新增 1
+		//rowcount = empDao.addOne1("test1", 18);
+		//System.out.println(rowcount);
+		// 測試單筆新增 2
+		rowcount = empDao.addOne2("test2", 18);
+		System.out.println(rowcount);
 		
-		System.out.println(empDao.queryListEmps());
-		
-		System.out.println(empDao.queryListEmps2());
 	}
 	
 }
