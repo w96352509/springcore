@@ -12,13 +12,20 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.study.springcore.jdbc.entity.Emp;
 
 @Repository
 public class EmpDao {
 
+	@Autowired
+	private ComboPooledDataSource dataSource ;
+	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	@Autowired //看到@Autowired 記得去 .xml 定義
@@ -56,6 +63,8 @@ public class EmpDao {
 		int rowcount = jdbcTemplate.update(sql,ename , age);
 		return rowcount;
 	}
+	
+	
 	// 單筆新增 2
     public int addOne2(String ename , Integer age) {
     	String sql = "insert into emp(ename,age)  values(:ename,:age)";
@@ -104,5 +113,33 @@ public class EmpDao {
 		String sql = "DELETE FROM emp where eid=? ";
 		return jdbcTemplate.update(sql , eid);
 	}
+	
+	// 單筆新增交易版本
+		public int addOnetx(String ename , Integer age) throws Exception {
+			
+			
+			//建立 TransactionManger
+			DataSourceTransactionManager transactionManager 
+			= new DataSourceTransactionManager(dataSource);
+			//定義 TransactionDefinition
+			DefaultTransactionDefinition def = new DefaultTransactionDefinition();
+			def.setPropagationBehavior(DefaultTransactionDefinition.PROPAGATION_REQUIRED);
+			
+			int rowcount =0;
+			//設定 TransactionStatus 狀態
+			TransactionStatus status = transactionManager.getTransaction(def);
+			try {
+				String sql = "insert into emp(ename,age)  values(?,?)";
+				rowcount = jdbcTemplate.update(sql,ename , age);
+				System.out.println(10/0); //故意拋出例外
+			} catch (Exception e) {
+				//遞回
+				transactionManager.rollback(status);
+				throw e;
+			}
+			//確認
+			transactionManager.commit(status);
+			return rowcount;
+		}
 	
 }
