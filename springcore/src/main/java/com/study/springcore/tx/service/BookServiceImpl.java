@@ -4,6 +4,8 @@ import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.study.springcore.tx.dao.BookDao;
 
@@ -13,6 +15,8 @@ public class BookServiceImpl implements BookService {
 	@Autowired
 	private BookDao bookDao;
 	
+	@Transactional(propagation = Propagation.REQUIRED) //一起提交
+	// getConnect() , setAutocommit(false) , commit()
 	@Override
 	public void buyOne(Integer wid, Integer bid) {
 		// 減去一本庫存
@@ -24,6 +28,7 @@ public class BookServiceImpl implements BookService {
 		//Log ... 
 	}
 
+	@Transactional  //個改個
 	@Override
 	public void buyMany(Integer wid, Integer... bids) {
 		//重複執行 buyone
