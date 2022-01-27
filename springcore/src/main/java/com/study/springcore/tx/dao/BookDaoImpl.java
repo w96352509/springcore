@@ -14,21 +14,22 @@ public class BookDaoImpl  implements BookDao{
 	private JdbcTemplate jdbcTemplate;
 	
 	@Override
+	//取得價錢
 	public Integer getPrice(Integer bid) {
 		String sql = "select price from book where bid=?" ;
-		return jdbcTemplate.queryForObject(sql, Integer.class , bid); //語法sql 型別.class  對應參數
+		return jdbcTemplate.queryForObject(sql, Integer.class , bid); //語法sql 型別.class  對應參數(要查的號碼)
 	}
 
 	@Override
 	public Integer getStockAmount(Integer bid) {
 		String sql = "select amount from stock where bid=?" ;
-		return jdbcTemplate.queryForObject(sql, Integer.class , bid); //語法sql 型別.class  對應參數
+		return jdbcTemplate.queryForObject(sql, Integer.class , bid); //語法sql 型別.class  對應參數(要查的號碼)
 	}
 
 	@Override
 	public Integer getWalletMoney(Integer wid) {
 		String sql = "select money from wallet where wid=?" ;
-		return jdbcTemplate.queryForObject(sql, Integer.class , wid); //語法sql 型別.class  對應參數
+		return jdbcTemplate.queryForObject(sql, Integer.class , wid); //語法sql 型別.class  對應參數(要查的號碼)
 	}
 
 	@Override
