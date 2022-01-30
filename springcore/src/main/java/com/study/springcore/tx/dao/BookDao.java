@@ -9,4 +9,5 @@ public interface BookDao {
        Integer getWalletMoney(Integer wid);
        Integer updateStock(Integer bid , Integer amount) throws InsufficientQuantity; //減去庫存
        Integer updateWallet(Integer wid , Integer money) throws InsufficientAmount; //減去餘額
+       Integer createLog(String tname, Integer bid ,Integer amount);
 }

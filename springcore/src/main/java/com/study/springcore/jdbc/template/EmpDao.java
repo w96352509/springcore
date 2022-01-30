@@ -114,7 +114,7 @@ public class EmpDao {
 		return jdbcTemplate.update(sql , eid);
 	}
 	
-	// 單筆新增交易版本
+	/* 單筆新增交易版本
 		public int addOnetx(String ename , Integer age) throws Exception {
 			
 			
@@ -140,6 +140,7 @@ public class EmpDao {
 			//確認
 			transactionManager.commit(status);
 			return rowcount;
-		}
+			
+		}*/
 	
 }

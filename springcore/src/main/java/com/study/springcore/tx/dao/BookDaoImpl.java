@@ -61,4 +61,11 @@ public class BookDaoImpl  implements BookDao{
 		return jdbcTemplate.update(sql , money , wid);
 	}
 
+	@Override
+	public Integer createLog(String tname, Integer bid ,Integer amount) {
+		String sql = "insert into time(tname,bid,amount,total) values(? , ? , ? ,?)";
+		int rowcount = jdbcTemplate.update(sql,tname,bid,amount,(getPrice(bid) * amount));
+		return rowcount;
+	  }
+
 }

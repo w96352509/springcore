@@ -13,9 +13,9 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 
-	public void buyBook(Integer wid, Integer bid) {
+	public void buyBook(Integer wid,String tname,Integer bid,Integer amount) {
 		try {
-			bookService.buyOne(wid, bid);
+			bookService.buyOne(wid,tname,bid,amount);
 			System.out.println("單筆購買");
 		} catch (InsufficientAmount e) {
 			System.err.println("餘額不足" + e);
@@ -25,9 +25,9 @@ public class BookController {
 
 	}
 
-	public void buyBooks(Integer wid, Integer... bids) {
+	public void buyBooks(Integer wid,String tname,Integer amount,Integer... bids) {
 		try {
-			bookService.buyMany(wid, bids);
+			bookService.buyMany(wid,tname,amount,bids);
 			System.out.println("多筆購買");
 		} catch (InsufficientAmount e) {
 			System.err.println("餘額不足" + e);

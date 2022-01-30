@@ -15,7 +15,7 @@ public class TemplateTest5 {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("jdbc-config.xml");
 		EmpDao empDao = ctx.getBean("empDao", EmpDao.class);
 		
-		empDao.addOnetx("Tx3tx", 30);
+		//empDao.addOnetx("Tx3tx", 30);
 		System.out.println("add");
 	}
 
